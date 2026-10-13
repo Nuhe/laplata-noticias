@@ -15,27 +15,27 @@ The existing homepage truncates headlines, overflows narrow viewports, and gives
 - Effects must preserve readable text, keyboard navigation, touch access, and reduced-motion preferences.
 
 ## Work unit
-- [ ] T1 — Implement and verify the presentation-ready homepage and interactive demo.
-  - Implementation and functional verification complete; direct-main delivery authorized, commit and native review remain pending.
+- [x] T1 — Implement and verify the presentation-ready homepage and interactive demo.
+  - Implementation and functional verification complete; direct-main delivery explicitly authorized and native review acknowledged.
   - Route: delegated direct; empty repository requires multi-file implementation, tests, and visual QA.
   - Acceptance: complete headlines; no horizontal overflow at 390/768/1440px; recognizable gradients and news hierarchy; responsive navigation; dynamic accent-insensitive search with empty states and keyboard dismissal; article interaction; back-to-top; subtle hover/reveal effects; reduced-motion support.
   - Checks: deterministic search tests with observed RED then GREEN; JavaScript syntax; browser checks of navigation/search/article dialog/back-to-top and narrow viewport layout; screenshot readback.
   - Passive presentation markup has no useful RED test; structural and browser checks cover it.
-  - Commit: pending native review preflight; direct-main delivery explicitly authorized, Conventional Commit with no AI attribution.
+  - Work-unit commit: `fcc3f15405624432697379f88173566ac0084297` — `feat: add INFOLAPLATA editorial redesign demo`. The committed tree exactly matches the reviewed tree `ace8c2ab1347eedbd78db51e879dc674b7116944`.
 
 ## Verification plan
 - `npm test` (Node built-in test runner; no dependency installation required).
 - `node --check dist/app.js` and `node --check dist/data.js`.
 - Local HTTP preview plus installed Chromium, with observed interactions and desktop/mobile screenshots.
-- Native review mode: on (global). Assessment returned `high` / `unassessable`: the new repository contains only untracked files and no HEAD. Native review entry remains pending the work-unit delivery boundary; no review approval is claimed.
+- Native review mode: on (global). Initial unstaged inventory was unassessable; staging the explicit files allowed native preflight against Git's empty tree. Native START selected medium risk and one reliability review. User granted consent; review approved with one non-blocking advisory. Exact acknowledgement returned `authority: burned` for lineage `review-421185a8d22665af`.
 - Independent verifier required if risk is high/unassessable or native review is unavailable/declined.
 
 ## Delivery
-- Feature branch: `feat/infolaplata-redesign`; repository has no initial commit.
+- Work began on `feat/infolaplata-redesign`; renamed to `main` for the user's explicit direct-main delivery instruction.
 - Forecast: approximately 800–1200 authored lines, generated/downloaded assets excluded; advisory estimate, never a reason to compress code.
 - Strategy: exception-ok for this initial coherent prototype, following the user's explicit direct-main push instruction instead of PR chaining. Keep tests and documentation with the behavior; the size heuristic does not justify artificial splitting or compression. No PR or website deployment requested.
-- Native review of an empty-root repository may need provider-supported bootstrap; do not invent a base or receipt.
-- Running committed authored lines: 0. Reviewed boundary: none.
+- Native preflight supported the empty-root repository directly after staging the explicit candidate files; no invented base or receipt was needed.
+- Work-unit authored lines: 1,079, including this tracker at the reviewed snapshot. Reviewed boundary: `fcc3f15405624432697379f88173566ac0084297`. This later tracker-only update is passive documentation, structurally checked separately.
 
 ## Progress
 - Repository cloned and confirmed empty; feature branch created.
@@ -46,9 +46,10 @@ The existing homepage truncates headlines, overflows narrow viewports, and gives
 - Parent inspected full desktop/mobile screenshots. Temporary images: `/tmp/infolaplata-1440.png`, `/tmp/infolaplata-768.png`, `/tmp/infolaplata-390.png`.
 - Approximately 1,025 authored implementation/test/doc lines, plus this task document. No minification or artificial size reductions.
 - Final independent pre-push verification passed all four required commands; a bounded scan of 17 intended files found no credential/private-key/sensitive-filename patterns. This is not a comprehensive security guarantee.
-- No dependencies installed, commits created, or remote writes performed. Preview and test browser processes are stopped; run `npm run dev` to view at `http://127.0.0.1:4173`.
+- No dependencies installed. Work-unit commit created; remote upload is the authorized next operation. Verification-owned preview/browser processes were stopped; a separately owned existing preview was not terminated. Run `npm run dev` to view at `http://127.0.0.1:4173` when that port is free.
 - Engram mirror: `odd/infolaplata-redesign/tasks` pending. Host-session-resolution hook blocks writes after clone; project detection now sees both portal_noticias and laplata-noticias. Exact original session identity was retained, never re-registered or replaced.
 - Remaining verification limits: no real-device, screen-reader, exhaustive contrast, Lighthouse, or production CMS checks; browser interactions primarily use DOM click. Image reuse rights need confirmation before any publication.
+- Native advisory R3-001 (`dist/app.js:85-89`): after scrolling on mobile, opening the menu can leave the in-flow navigation above the viewport while the toggle stays sticky. This was informational, did not open correction, and is follow-up work rather than a reason to reopen the approved candidate. Future fix should assert actual link geometry after scrolling, not only DOM click/state.
 
 ## Next step
-Follow native review preflight using the provider-supported empty-repository lifecycle, then commit and push directly to main as explicitly authorized. Never force push or overwrite an unexpected remote history. Website deployment remains unauthorized. Recover the pending Engram mirror only through confirmed runtime project/session binding.
+Push the committed prototype and this passive completion record to origin/main without force, then verify remote/local commit identity. Website deployment remains unauthorized. The mobile-menu advisory is a separate future improvement. Recover the pending Engram mirror only through confirmed runtime project/session binding.
